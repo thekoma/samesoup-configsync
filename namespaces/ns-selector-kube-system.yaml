@@ -1,0 +1,8 @@
+kind: NamespaceSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: kube-system
+spec:
+  selector:
+    matchLabels:
+      kubernetes.io/metadata.name: kube-system
