@@ -7,7 +7,7 @@ spec:
   git:
     auth: gcpserviceaccount
     branch: master
-    dir: {{ external_secret_path | default('secondary/kanboard') }}
+    dir: {{ external_kanboard_path | default('secondary/kanboard') }}
     gcpServiceAccountEmail: {{ repo_sa }}
     period: 0s
     repo: {{ template_git }}
