@@ -1,6 +1,7 @@
-apiVersion: configmanagement.gke.io/v1
+# system/repo.yaml
 kind: Repo
+apiVersion: configmanagement.gke.io/v1
 metadata:
   name: repo
 spec:
-  version: 1.0.0
+  version: "0.0.0"
