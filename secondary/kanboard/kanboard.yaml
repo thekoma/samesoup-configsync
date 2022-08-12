@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kanboard
+  name: kanboard
+  namespace: kanboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kanboard
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: kanboard
+    spec:
+      serviceAccountName: kanboard
+      containers:
+      - image: ghcr.io/kanboard/kanboard:latest
+        name: kanboard
+        resources: {}
