@@ -1,13 +1,13 @@
 apiVersion: configsync.gke.io/v1beta1
 kind: RepoSync
 metadata:
-  name: external-secrets
-  namespace: external-secrets
+  name: kanboard
+  namespace: kanboard
 spec:
   git:
     auth: gcpserviceaccount
     branch: master
-    dir: {{ external_secret_path | default('secondary/external-secrets') }}
+    dir: {{ external_kanboard_path }}
     gcpServiceAccountEmail: {{ repo_sa }}
     period: 0s
     repo: {{ template_git }}
