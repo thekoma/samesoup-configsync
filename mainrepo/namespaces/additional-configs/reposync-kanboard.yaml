@@ -5,7 +5,7 @@ metadata:
 spec:
   git:
     auth: gcpserviceaccount
-    branch: master
+    branch: {{ external_kanboard_branch |default('main')}}
     dir: {{ external_kanboard_path }}
     gcpServiceAccountEmail: {{ repo_sa }}
     period: 0s
