@@ -1,0 +1,17 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: external-secrets
+  namespace: external-secrets
+spec:
+  git:
+    auth: gcpserviceaccount
+    branch: master
+    dir: unstructured/external-secrets
+    gcpServiceAccountEmail: anthos-repo-admin@soup-64f1.iam.gserviceaccount.com
+    period: 0s
+    repo: https://source.developers.google.com/p/soup-64f1/r/anthos-repo-soup
+  override:
+    statusMode: enabled
+  sourceFormat: unstructured
+  sourceType: git
