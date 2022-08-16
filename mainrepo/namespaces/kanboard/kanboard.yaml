@@ -18,6 +18,7 @@ spec:
     spec:
       serviceAccountName: kanboard
       containers:
-      - image: ghcr.io/kanboard/kanboard:latest
+      - image: ghcr.io/thekoma/samesoup:latest
+        imagePullPolicy: Always
         name: kanboard
         resources: {}
