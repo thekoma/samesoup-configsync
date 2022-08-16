@@ -16,7 +16,7 @@ spec:
     spec:
       serviceAccountName: kanboard
       containers:
-      - image: ghcr.io/thekoma/samesoup:latest
+      - image: {{kanboard_image}}:{{kanboard_tag}}
         imagePullPolicy: Always
         name: kanboard
         readinessProbe:

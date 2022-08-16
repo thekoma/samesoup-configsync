@@ -9,3 +9,4 @@ steps:
   - id: 'build image'
     name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', '$_REGISTRY/kanboard:latest', 'docker/' ]
+images: ['$_REGISTRY/kanboard:latest']
