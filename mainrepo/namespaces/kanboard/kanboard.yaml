@@ -21,6 +21,14 @@ spec:
         name: kanboard
         livenessProbe:
           httpGet:
+            scheme: HTTP
+            path: /ping.php
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
             path: /ping.php
             port: 80
           initialDelaySeconds: 15
