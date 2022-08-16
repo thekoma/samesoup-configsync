@@ -19,11 +19,9 @@ spec:
       - image: {{kanboard_image}}:{{kanboard_tag}}
         imagePullPolicy: Always
         name: kanboard
-        readinessProbe:
-          httpGet:
-            path: /ping.php
-            port: 80
         livenessProbe:
           httpGet:
             path: /ping.php
             port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 5
