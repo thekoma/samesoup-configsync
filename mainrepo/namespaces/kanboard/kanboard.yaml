@@ -10,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: kanboard
-  strategy: {}
   template:
     metadata:
       labels:
@@ -21,4 +20,15 @@ spec:
       - image: ghcr.io/thekoma/samesoup:latest
         imagePullPolicy: Always
         name: kanboard
-        resources: {}
+        ports:
+          - name: web
+            containerPort: 80
+            hostPort: 80
+        readinessProbe:
+          httpGet:
+            path: /ping.php
+            port: web
+        livenessProbe:
+          httpGet:
+            path: /ping.php
+            port: web
