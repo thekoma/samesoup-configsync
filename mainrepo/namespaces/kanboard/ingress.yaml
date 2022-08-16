@@ -9,4 +9,4 @@ spec:
     service:
       name: kanboard
       port:
-        number: 8080
+        number: 80

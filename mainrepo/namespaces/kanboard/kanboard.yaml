@@ -6,7 +6,6 @@ metadata:
   name: kanboard
   namespace: kanboard
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: kanboard

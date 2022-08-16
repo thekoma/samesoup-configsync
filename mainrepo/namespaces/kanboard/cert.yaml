@@ -4,4 +4,4 @@ metadata:
   name: kanboard
 spec:
   domains:
-    - replatform.soup.thekoma.demo.altostrat.com
+    - {{ ssl_domain }}
