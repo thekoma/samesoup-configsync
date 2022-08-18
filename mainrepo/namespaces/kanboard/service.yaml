@@ -4,6 +4,9 @@ metadata:
   labels:
     app: kanboard
   name: kanboard
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+    beta.cloud.google.com/backend-config: '{"default": "kanboard"}'
 spec:
   ports:
   - port: 80
