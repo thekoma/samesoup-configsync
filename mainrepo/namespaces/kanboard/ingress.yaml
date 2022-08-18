@@ -4,12 +4,20 @@ metadata:
   name: kanboard
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "replatform-gke"
+    networking.gke.io/managed-certificates: kanboard
+    kubernetes.io/ingress.class: "gce"
 spec:
-  defaultBackend:
-    service:
-      name: kanboard
-      port:
-        number: 80
+  rules:
+  - host: "{{ ssl_domain }}"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kanboard
+            port:
+              number: 80
 ---
 apiVersion: cloud.google.com/v1
 kind: BackendConfig
