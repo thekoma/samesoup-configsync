@@ -17,6 +17,9 @@ spec:
       serviceAccountName: kanboard
       containers:
       - image: {{kanboard_image}}:{{kanboard_tag}}
+        env:
+        - name: SECRET_ID
+          value: "{{secret_id}}"
         imagePullPolicy: Always
         name: kanboard
         livenessProbe:
