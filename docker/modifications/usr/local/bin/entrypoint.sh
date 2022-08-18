@@ -14,7 +14,11 @@ echo $SECRET_ID
 PAYLOAD=$(curl -s "https://secretmanager.googleapis.com/v1/projects/${PROJECT_ID}/secrets/${SECRET_ID}/versions/latest:access" \
 --request "GET" \
 --header "authorization: Bearer ${TOKEN}" \
---header "content-type: application/json"|jq -r ".payload.data")|base64 -d > ${CONFIG_FILE}
+--header "content-type: application/json"|jq -r ".payload.data")
+
+# This is insecure but we want to be able to access
+# the configuration in the logging for demo purposes.
+echo $PAYLOAD|base64 -d |tee ${CONFIG_FILE}
 
 if [ ! -f /etc/nginx/ssl/kanboard.key  ] || [ ! -f /etc/nginx/ssl/kanboard.crt ]
 then
