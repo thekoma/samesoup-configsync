@@ -7,6 +7,7 @@ metadata:
     networking.gke.io/managed-certificates: kanboard
     kubernetes.io/ingress.class: "gce"
 spec:
+  ingressClassName: gce
   rules:
   - host: "{{ ssl_domain }}"
     http:
